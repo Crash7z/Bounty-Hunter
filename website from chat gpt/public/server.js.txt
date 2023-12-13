@@ -1,0 +1,26 @@
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.use(express.static('public'));
+
+// Serve the HTML file
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
+
+// API endpoint for personal information
+app.get('/api/personal-info', (req, res) => {
+    // Replace the dummy data with your own personal information
+    const personalInfo = {
+        name: 'Your Name',
+        bio: 'Web Developer',
+        skills: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express']
+    };
+
+    res.json(personalInfo);
+});
+
+app.listen(port, () => {
+    console.log(`Server is running at http://localhost:${port}`);
+});

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Personal Website</title>
+</head>
+<body>
+    <header>
+        <h1 id="name">Your Name</h1>
+        <p id="bio">Web Developer</p>
+    </header>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul id="skills-list">
+            <!-- Skills will be added dynamically using JavaScript -->
+        </ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

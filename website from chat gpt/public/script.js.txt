@@ -1,0 +1,21 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const nameElement = document.getElementById('name');
+    const bioElement = document.getElementById('bio');
+    const skillsList = document.getElementById('skills-list');
+
+    // Fetch personal information from the server (replace with your own data)
+    fetch('/api/personal-info')
+        .then(response => response.json())
+        .then(data => {
+            nameElement.textContent = data.name;
+            bioElement.textContent = data.bio;
+
+            // Add skills dynamically
+            data.skills.forEach(skill => {
+                const li = document.createElement('li');
+                li.textContent = skill;
+                skillsList.appendChild(li);
+            });
+        })
+        .catch(error => console.error('Error fetching personal information:', error));
+});
